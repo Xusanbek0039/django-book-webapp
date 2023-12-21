@@ -79,9 +79,9 @@
                 <div class="col-12 pl-5">
                 <h5>Izlashda iltimos quyidagicha foydalaning:</h5>
                 <ul class="pl-9">
-                    <b>Kitob nomi yokida kitob yaratuvchisi yani yozuvchini yozing!</b>
-                    <b>Toydalanuvchi izlash jarayonida iltimos ism yoki familiyani aniqroq kiriting!</b>
-                    <li>Yangilik izlayotgan bo'lsangiz iltimos yangilikdan qisqacha parcha yozing yoki nomini!</li>
+                    <b>*Kitob nomi yokida kitob yaratuvchisi yani yozuvchini yozing!</b>
+                    <b>*Toydalanuvchi izlash jarayonida iltimos ism yoki familiyani aniqroq kiriting!</b>
+                    <b>*Yangilik izlayotgan bo'lsangiz iltimos yangilikdan qisqacha parcha yozing yoki nomini!</b>
                 </ul>
                 </div>
             
@@ -92,7 +92,7 @@
         {% with object|class_name as klass %}
         {% if klass == 'Book' %}
             <div class="session-wrapper">
-                <div class="session"><div class="info-text bg-orange">Book</div></div>
+                <div class="session"><div class="info-text bg-orange">kitob</div></div>
             </div>
             <div class='col-12 class-item'>
                 <h4><a href='{{ object.get_absolute_url }}'><b>{{ object.title}}</b></a></h4>
@@ -102,7 +102,7 @@
         {% endwith %}
     
         {% empty %}
-            <div class="alert alert-info">No book matchs for your search.</div>
+            <div class="alert alert-info">Kechirasiz bunday kitob mavjud emas!</div>
         {% endfor %}
     </div>
     <div class="tab-pane fade" id="users" role="tabpanel" aria-labelledby="users-tab">
@@ -110,17 +110,17 @@
         {% with object|class_name as klass %}
         {% if klass == 'User' %}
             <div class="session-wrapper">
-                <div class="session"><div class="info-text bg-orange">User</div></div>
+                <div class="session"><div class="info-text bg-orange">Foydalanuvchi</div></div>
             </div>
             <div class='col-12 class-item'>
                 <h4><a href='{{ object.get_absolute_url }}'><b>{{ object.get_full_name }}</b></a></h4>
-                <p>Location : {{ object.location }}</p>
+                <p>Joylashuv : {{ object.location }}</p>
             </div><hr>
         {% endif %}
         {% endwith %}
     
         {% empty %}
-            <div class="alert alert-info">No user matchs for your search.</div>
+            <div class="alert alert-info">Kechirasiz bunday foydalanuvchi mavjud emas!</div>
         {% endfor %}
     </div>
     <div class="tab-pane fade" id="news" role="tabpanel" aria-labelledby="news-tab">
@@ -128,16 +128,21 @@
         {% with object|class_name as klass %}
         {% if klass == 'NewsAndEvent' %}
             <div class="session-wrapper">
-                <div class="session"><div class="info-text bg-orange">News and Events</div></div>
+                <div class="session"><div class="info-text bg-orange">Yangilik</div></div>
             </div>
             <div class='col-12 class-item'>
                 <h4><a href='{{ object.get_absolute_url }}'><b>{{ object.title }}</b></a></h4>
                 <li>{{ object.timestamp|timesince }}</li>
                 <p>{{ object.summary }}</p>
             </div><hr>
+            
         {% endif %}
         {% endwith %}
+
+        {% empty %}
+        <div class="alert alert-info">Kechirasiz bunday yangilik mavjud emas!</div>
         {% endfor %}
+        
     </div>
     </div>
 </div>
