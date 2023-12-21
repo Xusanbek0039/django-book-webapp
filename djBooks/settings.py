@@ -74,9 +74,9 @@ TEMPLATES = [
                 'django.template.context_processors.tz',
                 'django.template.context_processors.request',
                 'django.contrib.messages.context_processors.messages',
-                'books.context_processors.books_processor', # custome
+                # 'books.context_processors.books_processor', # custome
                 "books.context_processors.get_recommendation"  # custome
-                'books.context_processors.get_recommendation', # custome
+                # 'books.context_processors.get_recommendation', # custome
             ],
         },
     },
@@ -122,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "uz"
 
 TIME_ZONE = "UTC"
 
