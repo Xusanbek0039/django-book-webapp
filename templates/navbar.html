@@ -53,38 +53,38 @@
     <div class="collapse navbar-collapse pl-5" id="navbarsExampleDefault">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="/">Home</a>
+          <a class="nav-link active" href="/">Bosh saxifa</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Book</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="{% url 'books:books' %}">All Books</a>
-            <a class="dropdown-item" href="{% url 'books:recommendation' %}">Recommendations</a>
+            <a class="dropdown-item" href="{% url 'books:books' %}">Barcha kiroblar</a>
+            <a class="dropdown-item" href="{% url 'books:recommendation' %}">Tavsiyalar</a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'pages:news_events' %}">News & Events</a>
+          <a class="nav-link" href="{% url 'pages:news_events' %}">Yangiliklar</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" href="{% url 'pages:about' %}">About</a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'pages:contact' %}">Contact</a>
+          <a class="nav-link" href="{% url 'pages:contact' %}">Bog'lanish</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#faq" data-toggle="modal" data-target="#faq">FAQ</a>
+          <a class="nav-link" href="#faq" data-toggle="modal" data-target="#faq">Sayt haqida</a>
         </li>
       </ul>
 
       <form class="form-inline d-flex" action="{% url 'searchs:query' %}" method="GET">
-        <input class="form-control" type="text" name="q" value="{{ request.GET.q }}" placeholder="Search Fidele..." required/>
-        <button class="btn btn-outline-secondary" type="submit">Search</button>
+        <input class="form-control" type="text" name="q" value="{{ request.GET.q }}" placeholder="Kitob nomi..." required/>
+        <button class="btn btn-outline-secondary" type="submit">Izlash</button>
       </form>
 
       <ul class="navbar-nav ml-auto">
         {% if request.user.is_authenticated %}
         <li class="nav-item">
-            <a class="nav-link bg-light" href="{% url 'books:user_booklist' %}">My BookList</a>
+            <a class="nav-link bg-light" href="{% url 'books:user_booklist' %}">Mening kitoblarim</a>
         </li>
         <li class="nav-item dropdown">
           <a class="btn btn-sm btn-light dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -92,8 +92,8 @@
             {{ request.user.get_full_name|truncatechars:7 }}
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="{% url 'accounts:user_profile' %}">Profile</a>
-            <a class="dropdown-item" href="{% url 'books:user_booklist' %}">My BookList</a>
+            <a class="dropdown-item" href="{% url 'accounts:user_profile' %}">Shaxsiy hisob</a>
+            <a class="dropdown-item" href="{% url 'books:user_booklist' %}">Mening kitoblarim</a>
             <div class="text-muted text-center bg-light">Settings</div>
             <a class="dropdown-item" href="{% url 'accounts:update_account' %}">Settings</a>
             <a class="dropdown-item" href="{% url 'accounts:change_password' %}">Change password</a>
