@@ -7,8 +7,8 @@
 
 <br><br><br><br>
 <div class="container">
-<div class="col-md-7 mx-auto">
-<div class="card p-3">
+<div class="col-md-9 mx-auto">
+<div class="card p-">
     <h6 class="text-muted m-0">Sizning so'rovingiz bo'yicha {{ count }}- ta natija topildi! <b><em class="text-orange"> <mark>{{ query }}</mark></em></b></h6> <br>
 
     <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
@@ -31,7 +31,7 @@
             {% with object|class_name as klass %}
             {% if klass == 'Book' %}
                 <div class="session-wrapper">
-                    <div class="session"><div class="info-text bg-orange">Book</div></div>
+                    <div class="session"><div class="info-text bg-orange">Kitob</div></div>
                 </div>
                 <div class='col-12 class-item'>
                     <h4><a href='{{ object.get_absolute_url }}'><b>{{ object.title}}</b></a></h4>
@@ -39,13 +39,13 @@
                 </div><hr>
     
             {% elif klass == 'User' %}
-                <div class="info-text bg-orange">User</div>
+                <div class="info-text bg-orange">Foydalanuvchi</div>
                 <div class='col-12 class-item'>
                     <p><a href='{{ object.get_absolute_url }}'>{{ object.get_full_name }}</a></p>
                 </div><hr>
                 
             {% elif klass == 'NewsAndEvent' %}
-                <div class="info-text bg-orange">News And Events</div>
+                <div class="info-text bg-orange">Yangiliklar</div>
                 <div class='col-12 class-item'>
                     <p><b>Date: </b> {{ object.timestamp|timesince }} ago</p>
                     <h4><b>{{ object.title }}</b></h4>
@@ -66,18 +66,18 @@
     
             {% empty %}
             
-                <p class="text-center py-2">No book, user, or news & events match for your search</p>
+                <p class="text-center py-2">Sizning so'rovingiz bo'yicha hopzircha hech narsa mavjud emas!</p>
                 <div class='col-12 col-md-6 mx-auto my-3 py-2'>
                 <form method='GET' class='' action='.'>
                     <div class="input-group form-group-no-border mx-auto">
                         <input type="text" name="q" data-toggle="popover" data-placement="bottom" data-content="Press enter to search" class="form-control cfe-nav mt-0 py-3" placeholder="Search..." value="{{ request.GET.q }}" data-original-title="" title="" autofocus="autofocus" required>
-                        <button type="submit" class="btn btn-outline-secondary">Search</button>
+                        <button type="submit" class="btn btn-outline-secondary">Izlash</button>
                     </div>
                 </form>
             
                 </div>
                 <div class="col-12 pl-5">
-                <h5>Search by using:</h5>
+                <h5>Izlashda iltimos quyidagicha foydalaning</h5>
                 <ul class="pl-3">
                     <li>Search books using Book title or summary or book author</li>
                     <li>Search peoples/users using their name or email or location.</li>
