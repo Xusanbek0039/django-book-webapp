@@ -78,7 +78,7 @@ class Book(models.Model):
     summary = models.TextField(blank=True, null=True)
     # genres = models.TextField(choices=GENRES, blank=True, null=True)
     genres = models.ManyToManyField(Genres, blank=True)
-    cover_page = models.ImageField(upload_to='cover_pages/%Y/%m/%d', default='default_book_cover.png')
+    cover_page = models.ImageField(upload_to='cover_pages/%Y/%m/%d', default='default_book_cover.pdf')
     timestamp = models.DateTimeField(auto_now_add=True)
     ratings = GenericRelation(Rating, related_query_name='books')
 
